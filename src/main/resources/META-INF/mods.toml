@@ -16,11 +16,11 @@ description='''${mod_description}'''
     type="required"
     versionRange="${neo_version_range}"
     ordering="NONE"
-    side="SERVER"
+    side="BOTH"
 
 [[dependencies.${mod_id}]]
     modId="minecraft"
     type="required"
     versionRange="${minecraft_version_range}"
     ordering="NONE"
-    side="SERVER"
+    side="BOTH"
