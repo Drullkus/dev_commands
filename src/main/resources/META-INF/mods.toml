@@ -7,6 +7,8 @@ version="${mod_version}"
 displayName="${mod_name}"
 authors="${mod_authors}"
 
+displayTest="IGNORE_SERVER_VERSION" # MATCH_VERSION is the default if nothing is specified (#optional)
+
 description='''${mod_description}'''
 
 [[dependencies.${mod_id}]]
@@ -14,11 +16,11 @@ description='''${mod_description}'''
     type="required"
     versionRange="${neo_version_range}"
     ordering="NONE"
-    side="BOTH"
+    side="SERVER"
 
 [[dependencies.${mod_id}]]
     modId="minecraft"
     type="required"
     versionRange="${minecraft_version_range}"
     ordering="NONE"
-    side="BOTH"
+    side="SERVER"
