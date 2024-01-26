@@ -15,7 +15,7 @@ import org.slf4j.Logger;
 @Mod(DevCommandsNeoForged.MOD_ID)
 public class DevCommandsNeoForged {
     public static final String MOD_ID = "dev_commands";
-    private static final Logger LOGGER = LogUtils.getLogger();
+    public static final Logger LOGGER = LogUtils.getLogger();
 
     public DevCommandsNeoForged() {
         NeoForge.EVENT_BUS.addListener(this::registerCommands);
@@ -27,6 +27,7 @@ public class DevCommandsNeoForged {
         dispatcher.register(Commands.literal("speed").requires(p -> p.hasPermission(2)).then(Commands.argument("fly_speed", FloatArgumentType.floatArg(0.0000001f, 20)).executes(DevCommandsNeoForged::runFlySpeed)));
 
         DiscardEntitiesCommand.register(dispatcher);
+        SendStructureDebugCommand.register(dispatcher);
     }
 
     private static int runFlySpeed(CommandContext<CommandSourceStack> context) {
